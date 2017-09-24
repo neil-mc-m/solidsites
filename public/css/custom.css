@@ -1,0 +1,16 @@
+.navbar .container {
+    padding-top: 4px;
+
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+/*@media (max-width: 767px) !* @grid-float-breakpoint -1 *!*/
+/*{*/
+    /*.navbar .fixedTop-onMobile*/
+    /*{*/
+        /*position: relative;*/
+        /*top: auto;*/
+    /*}*/
+/*}*/
