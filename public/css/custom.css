@@ -1,5 +1,20 @@
 
 body {
     position: relative;
+}
+
+.section {
+    padding-top: 100px;
+}
+.card-boite {
+
+    background-color: #008CBA;
+}
+.card-davegearty {
+    background-color: #449d44;
+}
+.section-contact-us {
 
 }
+
+
