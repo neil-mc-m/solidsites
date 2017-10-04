@@ -62,25 +62,36 @@
                 <h2 class="title text-white">Our Packages</h2>
 
                     <div class="row">
-
                         {#<div class="card-group">#}
                         {% for entry in entries %}
                             <div class="col-md-4">
-                                {#<div class="card">#}
-                                {#<img src="../assets/img/avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">#}
-                                <h4 class="card-title text-white">{{ entry.getName|upper }}</h4>
-                                <p class="category text-primary">{{ entry.getDescription }}</p>
+                            {#<div class="card">#}
+                                <h4 class="text-white">{{ entry.name|upper }}</h4>
                                 <div class="separator separator-primary"></div>
-                                <p class="text-muted">{{ entry.getInfo }}</p>
+                                <p class="category text-primary">{{ entry.description }}</p>
+                                <p class="text-muted">{{ entry.info }}</p>
+                                <div class="separator separator-primary"></div>
+                                <p class="text-white">From &euro;{{ entry.price }}</p>
+                                <a href="#" class="btn btn-lg btn-outline-primary details-btn">More Details</a>
+                            {#</div>#}
+                            </div>
+                            {% endfor %}
+
+                        {#{% for entry in entries %}#}
+
+                                {#<img src="../assets/img/avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">#}
+
+
+
                                 {#<p class="category text-primary">{{ entry.getFeatureHeading }}</p>#}
                                 {#<p class="description">{{ entry.getFeature1 }}</p>#}
                                 {#<p class="description">{{ entry.getFeature2 }}</p>#}
                                 {#<p class="description">{{ entry.getFeature3 }}</p>#}
-                                <a href="/packages/{{ entry.getId }}" class="btn btn-outline-primary btn-lg">Details</a>
-                            </div>
+                                {#<a href="{{ path('packages') }}" class="btn btn-outline-primary btn-lg">Details</a>#}
+                            {#</div>#}
                             {#</div>#}
 
-                        {% endfor %}
+                        {#{% endfor %}#}
                         </div>
             </div>
         </div>

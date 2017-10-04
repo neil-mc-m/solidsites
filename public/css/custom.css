@@ -68,4 +68,7 @@ body {
 .bg-black {
     background-color: #1b1e21;
 }
+.details-btn {
+    margin-bottom: 5rem;
+}
 /* Media queries */

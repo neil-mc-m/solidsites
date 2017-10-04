@@ -399,8 +399,17 @@ AddDefaultCharset utf-8
 #     RewriteCond %{SERVER_ADDR} !=::1
 #     RewriteRule ^ %{ENV:PROTO}://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # </IfModule>
+#
+# rewrite to front controller index.php
+<IfModule mod_rewrite.c>
+    Options -MultiViews
 
-
+    RewriteEngine On
+    #RewriteBase /path/to/app
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
 # ######################################################################
 # # SECURITY                                                           #
 # ######################################################################
