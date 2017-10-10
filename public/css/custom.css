@@ -68,4 +68,10 @@ body {
 .bg-black {
     background-color: #1b1e21;
 }
+.details-btn {
+    margin-bottom: 5rem;
+}
+.large-icon {
+    height: 120px;
+}
 /* Media queries */

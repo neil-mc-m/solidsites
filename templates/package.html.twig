@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    {{ entry }}
+    {{ dump(entry) }}
+{% for item in entry %}
+    <p>{{ item.getPackage }}</p>
+    <p>{{ item.getFeatureList }}</p>
+    {% endfor %}
 {% endblock %}
