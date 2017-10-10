@@ -15,7 +15,6 @@ class FrontendController
 {
     public function HomeAction(Application $app)
     {
-
         $entries = Package::all();
         return $app['twig']->render('home.html.twig', array(
             'entries' => $entries

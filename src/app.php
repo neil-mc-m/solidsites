@@ -1,6 +1,8 @@
 <?php
 use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
+use Silex\Provider\SessionServiceProvider;
+use Silex\Provider\SecurityServiceProvider;
 use JG\Silex\Provider\CapsuleServiceProvider;
 use Solidsites\UserProvider;
 
@@ -23,22 +25,27 @@ $app->register(new CapsuleServiceProvider(),
                 'username' => 'root',
                 'password' => 'root'
             ]
+
+        ],
+        'capsule.options' => [
+            'setAsGlobal'    => true,
+            'bootEloquent'   => true,
         ]
     ]
 );
-$app->register(new Silex\Provider\SecurityServiceProvider(), array(
+$app->register(new SessionServiceProvider());
+$app->register(new SecurityServiceProvider(), array(
         'security.firewalls' => array(
             'admin' => array(
                 'pattern' => '^/admin',
                 'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
                 'logout' => array('logout_path' => '/admin/logout', 'invalidate_session' => true),
                 'users' => function () use ($app) {
-                    return new UserProvider($app['capsule.connections']);
+                    return new UserProvider();
                 },
-            ),
+            )
         ),
         'security.encoder.bcrypt.cost' => 4,
-    )
-);
+    ));
 $app['debug'] = true;
 return $app;

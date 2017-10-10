@@ -71,4 +71,7 @@ body {
 .details-btn {
     margin-bottom: 5rem;
 }
+.large-icon {
+    height: 120px;
+}
 /* Media queries */
