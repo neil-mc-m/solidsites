@@ -3,6 +3,7 @@ use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\SecurityServiceProvider;
+use Silex\Provider\FormServiceProvider;
 use JG\Silex\Provider\CapsuleServiceProvider;
 use Solidsites\UserProvider;
 
@@ -47,5 +48,17 @@ $app->register(new SecurityServiceProvider(), array(
         ),
         'security.encoder.bcrypt.cost' => 4,
     ));
+$app->register(new Silex\Provider\ValidatorServiceProvider());
+$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+    'translator.domains' => array(),
+));
+$app->register(new FormServiceProvider());
+
 $app['debug'] = true;
+// register custom forms here.
+
+$app->extend('form.types', function ($types) {
+    $types[] = new Solidsites\Forms\PackageType();
+    return $types;
+});
 return $app;

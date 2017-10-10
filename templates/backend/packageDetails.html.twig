@@ -31,22 +31,28 @@
                         <!-- Package Cards -->
 
                             <div class="card mb-3">
+
                                 {% for key, value in package %}
-                                    {{ value.name }}
+                                <div class="card text-center">
+                                    <div class="card-header">
+                                        <ul class="nav nav-pills card-header-pills">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" href="#">View</a>
+                                            </li>
+                                            <li><a href="/admin/packages/edit/{{ value.slug }}" class="nav-link">Edit</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ value.name }}</h4>
+                                        <h6 class="card-subtitle text-muted mb-2">{{ value.description }}</h6>
+                                        <p class="card-text">{{ value.info }}</p>
+                                        <p class="card-text">&euro;{{ value.price }}</p>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        {{ value.created_at }}
+                                    </div>
                                     {% endfor %}
-                                {#<a href="#">#}
-                                    {#<img class="card-img-top img-fluid w-100" src="https://unsplash.it/700/450?image=180" alt="">#}
-                                {#</a>#}
-                                {#<div class="card-body">#}
-                                    {#<h6 class="card-title mb-1"><a href="/admin/packages/{{  }}">{{ package.name }}</a></h6>#}
-                                    {#<p class="card-text small">{{ package.description }}</p>#}
-                                    {#<p class="card-text small">{{ package.info }}</p>#}
-                                    {#<p class="card-footer">{{ package.price }}</p>#}
-                                {#</div>#}
-                                {#<hr class="my-0">#}
 
-
-                                {#<div class="card-footer small text-muted">Created {{ package.created_at }}</div>#}
                             </div>
 
 
