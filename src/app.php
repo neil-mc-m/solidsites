@@ -6,11 +6,13 @@ use Silex\Provider\SecurityServiceProvider;
 use Silex\Provider\FormServiceProvider;
 use JG\Silex\Provider\CapsuleServiceProvider;
 use Solidsites\UserProvider;
+use Solidsites\Forms\PackageType;
+
 
 require_once __DIR__.'/../vendor/autoload.php';
 
 $app = new Application();
-
+$app['debug'] = true;
 $app->register(new Silex\Provider\VarDumperServiceProvider());
 $app->register(new TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../templates',
@@ -48,17 +50,21 @@ $app->register(new SecurityServiceProvider(), array(
         ),
         'security.encoder.bcrypt.cost' => 4,
     ));
-$app->register(new Silex\Provider\ValidatorServiceProvider());
+$app->register(new Silex\Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
-    'translator.domains' => array(),
+    'locale_fallbacks' => array('en'),
 ));
+//$app->register(new Silex\Provider\ValidatorServiceProvider());
+//$app->register(new Silex\Provider\TranslationServiceProvider(), array(
+//    'translator.domains' => array(),
+//));
 $app->register(new FormServiceProvider());
 
-$app['debug'] = true;
+
 // register custom forms here.
 
 $app->extend('form.types', function ($types) {
-    $types[] = new Solidsites\Forms\PackageType();
+    $types[] = new PackageType();
     return $types;
 });
 return $app;

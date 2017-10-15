@@ -35,3 +35,4 @@ $('a[href*="#"]')
             }
         }
     });
+$('#summernote').summernote();

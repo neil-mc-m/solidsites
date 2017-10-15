@@ -23,7 +23,7 @@ class PackageController
         ));
     }
 
-    public function viewPackageDetailsAction(Application $app, $slug)
+    public function packageDetailsAction(Application $app, $slug)
     {
         $package = Package::where('slug', '=', $slug)->get();
         return $app['twig']->render('backend/packageDetails.html.twig', array(
@@ -33,7 +33,7 @@ class PackageController
 
     public function editAction(Request $request, Application $app, $slug)
     {
-        $package = Package::where('slug', '=', $slug)->get();
+        $package = Package::where('slug', $slug)->firstOrFail();
         $data = array(
             'name' => $package->name,
             'description' => $package->description,
@@ -47,10 +47,21 @@ class PackageController
             ->getForm();
         $form->handleRequest($request);
         if ($form->isValid()) {
-            $data = $form->getData();
+//            get the form data
+            $formData = $form->getData();
+//            assign the model attributes to the correct form data
+            $package->name = $formData['name'];
+            $package->description = $formData['description'];
+            $package->info = $formData['info'];
+            $package->slug = $formData['slug'];
+            if ($package->save()) {
+                $app['session']->getFlashbag()->add('message', 'You just successfully edited a package');
+            } else {
+                $app['session']->getFlashbag()->add('message', 'That didnt successfully edit');
+            }
 
         }
-        return $app['twig']->render('backend/forms/package.html.twig', array(
+        return $app['twig']->render('backend/package.html.twig', array(
             'form' => $form->createView()
         ));
     }

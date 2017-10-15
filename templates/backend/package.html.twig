@@ -1,0 +1,25 @@
+{% extends 'backend/adminBase.html.twig' %}
+{% block content %}
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/admin/dashboard">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <a href="/admin/packages">Packages</a>
+                </li>
+            </ol>
+            <div class="row">
+                <div class="col-lg-8">
+
+
+                        <h4>edit your package here</h4>
+                        {% include 'backend/partials/package-form.html.twig' %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
