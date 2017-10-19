@@ -7,6 +7,7 @@ use Silex\Provider\FormServiceProvider;
 use JG\Silex\Provider\CapsuleServiceProvider;
 use Solidsites\UserProvider;
 use Solidsites\Forms\PackageType;
+use Solidsites\Forms\ContactType;
 
 
 require_once __DIR__.'/../vendor/autoload.php';
@@ -54,10 +55,8 @@ $app->register(new Silex\Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'locale_fallbacks' => array('en'),
 ));
-//$app->register(new Silex\Provider\ValidatorServiceProvider());
-//$app->register(new Silex\Provider\TranslationServiceProvider(), array(
-//    'translator.domains' => array(),
-//));
+$app->register(new Silex\Provider\ValidatorServiceProvider());
+$app->register(new Silex\Provider\HttpFragmentServiceProvider());
 $app->register(new FormServiceProvider());
 
 
@@ -65,6 +64,10 @@ $app->register(new FormServiceProvider());
 
 $app->extend('form.types', function ($types) {
     $types[] = new PackageType();
+    return $types;
+});
+$app->extend('form.types', function ($types) {
+    $types[] = new ContactType();
     return $types;
 });
 return $app;

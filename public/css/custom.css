@@ -62,16 +62,25 @@ body {
     position: absolute;
 }
 .package-card {
-
     background-color: #242E38;
 }
 .bg-black {
-    background-color: #1b1e21;
+    background-color: #242E38;
 }
 .details-btn {
     margin-bottom: 5rem;
 }
 .large-icon {
     height: 120px;
+}
+.radio {
+    display: flex;
+    flex-direction: column;
+}
+#packages {
+    background-image: linear-gradient(rgba(88, 88, 88, 1), rgba(0, 0, 0, 00.7)),
+                        url('/img/christopher-gower-291246.jpg');
+    background-size: cover;
+
 }
 /* Media queries */

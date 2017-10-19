@@ -10,6 +10,14 @@
                 <li class="breadcrumb-item active">
                     <a href="/admin/packages">Packages</a>
                 </li>
+                <li class="breadcrumb-item">
+                    {#{% for package in data %}#}
+                        <a href="/admin/packages/{{ data.slug }}">{{ data.name }}</a>
+                    {#{% endfor %}#}
+                </li>
+                <li class="breadcrumb-item">
+                    Edit
+                </li>
             </ol>
             <div class="row">
                 <div class="col-lg-8">

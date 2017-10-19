@@ -13,8 +13,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Solidsites\Forms\PackageType;
 use Solidsites\Models\Package;
 
+/**
+ * All actions relating to the creation and viewing of packages.
+ *
+ * Class PackageController
+ * @package Solidsites\Controllers
+ */
 class PackageController
 {
+
+    /**
+     * View all packages
+     *
+     * @param Application $app
+     * @return mixed
+     */
     public function viewAction(Application $app)
     {
         $packages = Package::all();
@@ -23,6 +36,13 @@ class PackageController
         ));
     }
 
+    /**
+     * View a single package details
+     *
+     * @param Application $app
+     * @param $slug
+     * @return mixed
+     */
     public function packageDetailsAction(Application $app, $slug)
     {
         $package = Package::where('slug', '=', $slug)->get();
@@ -31,6 +51,14 @@ class PackageController
         ));
     }
 
+    /**
+     * Edit a package
+     *
+     * @param Request $request
+     * @param Application $app
+     * @param $slug
+     * @return mixed
+     */
     public function editAction(Request $request, Application $app, $slug)
     {
         $package = Package::where('slug', $slug)->firstOrFail();
@@ -61,8 +89,9 @@ class PackageController
             }
 
         }
-        return $app['twig']->render('backend/package.html.twig', array(
-            'form' => $form->createView()
+        return $app['twig']->render('backend/editPackage.html.twig', array(
+            'form' => $form->createView(),
+            'data' => $data,
         ));
     }
 }

@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'frontend/base.html.twig' %}
 
 
 
@@ -22,8 +22,7 @@
                             </span>
                                 <input id="username" type="text" name="_username" value="{{ last_username }}" class="form-control" placeholder="Your Name...">
                             </div>
-                            {#<input id="username" type="text" name="_username" class="validate">#}
-                            {#<label for="username">Username</label>#}
+
 
 
                             <div class="input-group input-lg">
@@ -33,10 +32,7 @@
                                 <input type="password" name="_password" class="form-control" value="" placeholder="Password...">
 
                             </div>
-                            {#<div class="input-field col s12 m6 offset-m3">#}
-                            {#<input id="password" type="password" name="_password" class="validate">#}
-                            {#<label for="password">Password</label>#}
-                            {#</div>#}
+
 
 
                             <div class="send-button">
@@ -44,14 +40,6 @@
                                 <input class="btn btn-primary btn-round btn-block btn-lg" type="submit" name="action" value="submit"></input>
                             </div>
 
-                            {#<div class="col s12 m6 center-align">#}
-                            {#<button class="btn waves-effect waves-light" type="submit" name="action" value="Submit">Submit</button>#}
-                            {#</div>#}
-                            {#<input type="text" name="_username" value="{{ last_username }}" />#}
-                            {#<input type="password" name="_password" value="" />#}
-
-                            {#{{ error }}#}
-                            {#<input type="submit" />#}
                         </form>
                     </div>
                 </div>

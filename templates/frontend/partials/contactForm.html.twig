@@ -1,0 +1,66 @@
+<form action="" method="post">
+    {#<div class="input-group input-lg">#}
+                            {#<span class="input-group-addon">#}
+                                {#<i class="now-ui-icons users_circle-08"></i>#}
+                            {#</span>#}
+        {#<input type="text" class="form-control" placeholder="First Name...">#}
+    {#</div>#}
+    {#<div class="input-group input-lg">#}
+                            {#<span class="input-group-addon">#}
+                                {#<i class="now-ui-icons ui-1_email-85"></i>#}
+                            {#</span>#}
+        {#<input type="text" class="form-control" placeholder="Email...">#}
+    {#</div>#}
+    {#<div class="textarea-container">#}
+        {#<textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>#}
+    {#</div>#}
+    {#<div class="send-button">#}
+        {#<a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Send Message</a>#}
+    {#</div>#}
+    <div class="input-group input-lg">
+        <span class="input-group-addon">
+        <i class="now-ui-icons users_circle-08"></i>
+        </span>
+        {{ form_errors(form.name) }}
+        {#{{ form_label(form.name) }}#}
+        {{ form_widget(form.name) }}
+
+
+    </div>
+
+
+    <div class="input-group input-lg">
+        <span class="input-group-addon">
+        <i class="now-ui-icons ui-1_email-85"></i>
+        </span>
+        {{ form_errors(form.email) }}
+        {#{{ form_label(form.email) }}#}
+        {{ form_widget(form.email) }}
+
+
+    </div>
+    <h6 class="p-md-3 p-sm-4">Im interested in the ...</h6>
+    <div class="radio input-group text-justify">
+
+        {#<span class="input-group-addon">#}
+        {#<i class="now-ui-icons ui-1_email-85"></i>#}
+        {#</span>#}
+        {{ form_errors(form.package) }}
+        {#{{ form_label(form.email) }}#}
+        {{ form_widget(form.package) }}
+
+
+    </div>
+    <div class="textarea-container">
+
+        {{ form_errors(form.message) }}
+        {#{{ form_label(form.message) }}#}
+        {{ form_widget(form.message) }}
+
+
+    </div>
+    <div class="send-button">
+
+        <input class="btn btn-primary btn-round btn-block btn-lg" type="submit" name="action" value="submit"></input>
+    </div>
+</form>

@@ -13,7 +13,7 @@ class LoginController
             'error' => $app['security.last_error']($request),
             'last_username' => $app['session']->get('_security.last_username'),
         );
-        return $app['twig']->render('login.html.twig', $args_array);
+        return $app['twig']->render('frontend/login.html.twig', $args_array);
     }
     public function dashboardAction(Application $app)
     {

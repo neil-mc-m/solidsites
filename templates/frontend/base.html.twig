@@ -27,19 +27,18 @@
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
-{# the header #}
+
 
 {# the body #}
 <body class="landing-page sidebar-collapse" data-spy="scroll" data-target=".section" data-offset="100">
+{% include 'frontend/partials/navbar.html.twig' %}
 {% block content %}{% endblock %}
-
+{# contact form #}
+{#{% include 'frontend/partials/contactForm.html.twig' %}#}
+{# modals #}
+{% include 'frontend/partials/modals.html.twig' %}
 {# the footer #}
-
-<!-- js -->
-<!--Import jQuery -->
-
-
-
+{% include 'frontend/partials/footer.html.twig' %}
 <!--   Core JS Files   -->
 <script src="/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="/js/core/popper.min.js" type="text/javascript"></script>

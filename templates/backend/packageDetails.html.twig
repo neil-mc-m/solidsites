@@ -13,7 +13,7 @@
                 </li>
                 <li class="breadcrumb-item">
                     {% for key, value in package %}
-                    <a href="/admin/packages/{{ value.slug }}">{{ value.name }}</a>
+                    {{ value.name }}
                     {% endfor %}
                 </li>
             </ol>
@@ -36,9 +36,6 @@
                                 <div class="card text-center">
                                     <div class="card-header">
                                         <ul class="nav nav-pills card-header-pills">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" href="#">View</a>
-                                            </li>
                                             <li><a href="/admin/packages/edit/{{ value.slug }}" class="nav-link">Edit</a></li>
                                         </ul>
                                     </div>

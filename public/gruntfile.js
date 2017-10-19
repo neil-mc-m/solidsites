@@ -17,7 +17,11 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src: ["css/custom.css", "../templates/*.html.twig", "../templates/backend/*.html.twig", "js/custom.js"]
+                    src: ["css/custom.css",
+                          "../templates/*.html.twig",
+                          "../templates/backend/*.html.twig",
+                          "../templates/frontend/*.html.twig",
+                          "js/custom.js"]
                 },
                 options: {
                     proxy: "http://127.0.0.1:8888"
