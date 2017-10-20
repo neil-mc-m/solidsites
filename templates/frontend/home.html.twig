@@ -1,7 +1,7 @@
 {% extends 'frontend/base.html.twig' %}
 
 {% block content %}
-
+    {% include 'frontend/partials/navbar.html.twig' %}
 
     <div class="wrapper">
         <div class="page-header page-header-lg">
@@ -47,23 +47,25 @@
             <div class="separator separator-primary"></div>
         </div>
 
+
+        <!-- Packages Section -->
+
         <div id="packages" class="section section-team text-center package-card">
             <div class="container-fluid">
                 <h2 class="title text-white">Our Packages</h2>
 
                 <div class="row">
-                    {#<div class="card-group">#}
+
                     {% for entry in entries %}
                         <div class="col-md-4">
-                            {#<div class="card">#}
                             <h4 class="text-white">{{ entry.name|upper }}</h4>
                             <div class="separator separator-primary"></div>
                             <p class="category text-primary">{{ entry.description }}</p>
-                            <p class="text-muted">{{ entry.info }}</p>
+                            <p class="text-white">{{ entry.info }}</p>
                             <div class="separator separator-primary"></div>
                             <p class="text-white">From &euro;{{ entry.price }}</p>
-                            <a href="#" class="btn btn-lg btn-outline-primary details-btn">More Details</a>
-                            {#</div>#}
+                            <a href="/{{ entry.slug|slugify }}" class="btn btn-lg btn-outline-primary details-btn">More Details</a>
+
                         </div>
                     {% endfor %}
 
@@ -150,8 +152,12 @@
         </div>
     </div>
 
+    {# modals #}
+    {% include 'frontend/partials/modals.html.twig' %}
+    {# the footer #}
+    {% include 'frontend/partials/footer.html.twig' %}
 
 
-
-
+    <!-- custom js -->
+    <script src="/js/custom.js" type="text/javascript"></script>
 {% endblock %}

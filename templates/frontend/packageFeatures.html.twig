@@ -1,0 +1,83 @@
+{% extends 'frontend/base.html.twig' %}
+{% block content %}
+    {% include 'frontend/partials/navbar.html.twig' %}
+    <div class="wrapper">
+        <div class="page-header page-header-small">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('/img/greg-rakozy-129733.jpg');">
+            </div>
+            <div class="container">
+                <div class="content-center">
+                    <h1 class="title">Package Features</h1>
+
+                    <div class="text-center">
+                        <p class="text-white">
+                            {{ package.name }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-about-us" id="about-us">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h2 class="title">Features</h2>
+                        <div class="card">
+                            <ul class="nav nav-tabs justify-content-center" role="tablist" data-background-color="orange">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#frontend" role="tab">Frontend</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#backend" role="tab">
+                                        Backend
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#hosted" role="tab">
+                                        Hosting
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#analytics" role="tab">
+                                        Analytics
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="card-body">
+                                <!-- Tab panes -->
+                                <div class="tab-content text-center">
+                                    <div class="tab-pane active" id="frontend" role="tabpanel">
+                                        <p>{{ package.feature.frontend }}</p>
+                                    </div>
+                                    <div class="tab-pane" id="backend" role="tabpanel">
+                                        <p>{{ package.feature.backend }}</p>
+                                    </div>
+                                    <div class="tab-pane" id="hosted" role="tabpanel">
+                                        <p>{{ package.feature.host }}</p>
+                                        <p>{{ package.feature.cpu }}</p>
+                                        <p>{{ package.feature.ram }}</p>
+                                        <p>{{ package.feature.drive }}</p>
+                                        <p>{{ package.feature.transfer }}</p>
+                                        <p>{{ package.feature.server }}</p>
+                                    </div>
+                                    <div class="tab-pane" id="analytics" role="tabpanel">
+                                        <p>{{ package.feature.analytics }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="separator separator-primary"></div>
+        </div>
+
+    </div>
+    {# modals #}
+    {% include 'frontend/partials/modals.html.twig' %}
+    {# the footer #}
+    {% include 'frontend/partials/footer.html.twig' %}
+{% endblock %}

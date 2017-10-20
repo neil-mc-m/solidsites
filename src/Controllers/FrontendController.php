@@ -34,4 +34,14 @@ class FrontendController
         ));
     }
 
+    public function viewPackageAction(Application $app, $slug)
+    {
+        $package = Package::where('slug', $slug)->firstOrFail();
+        $features = $package->feature();
+        return $app['twig']->render('frontend/packageFeatures.html.twig', array(
+            'features' => $features,
+            'package' => $package
+        ));
+    }
+
 }

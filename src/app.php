@@ -58,6 +58,7 @@ $app->register(new Silex\Provider\TranslationServiceProvider(), array(
 $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\HttpFragmentServiceProvider());
 $app->register(new FormServiceProvider());
+$app->register(new Cocur\Slugify\Bridge\Silex2\SlugifyServiceProvider());
 
 
 // register custom forms here.

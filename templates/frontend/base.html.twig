@@ -12,7 +12,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    {#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">#}
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link href="/css/now-ui-kit.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/custom.css">
     <title>
@@ -31,18 +32,17 @@
 
 {# the body #}
 <body class="landing-page sidebar-collapse" data-spy="scroll" data-target=".section" data-offset="100">
-{% include 'frontend/partials/navbar.html.twig' %}
+
 {% block content %}{% endblock %}
-{# contact form #}
-{#{% include 'frontend/partials/contactForm.html.twig' %}#}
-{# modals #}
-{% include 'frontend/partials/modals.html.twig' %}
-{# the footer #}
-{% include 'frontend/partials/footer.html.twig' %}
+
+
 <!--   Core JS Files   -->
-<script src="/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
-<script src="/js/core/popper.min.js" type="text/javascript"></script>
-<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>
+<script src="/js/core/jquery.3.2.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+{#<script src="/js/core/popper.min.js" type="text/javascript"></script>#}
+{#<script src="/js/core/bootstrap.min.js" type="text/javascript"></script>#}
 <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
 <script src="/js/plugins/bootstrap-switch.js"></script>
 <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
@@ -53,8 +53,7 @@
 <script src="/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
 <!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
 <script src="/js/now-ui-kit.js?v=1.1.0" type="text/javascript"></script>
-<!-- custom js -->
-<script src="/js/custom.js" type="text/javascript"></script>
+
 </body>
 
 </html>
