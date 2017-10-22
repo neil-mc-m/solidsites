@@ -16,9 +16,9 @@ class FrontendController
 {
     public function homeAction(Application $app)
     {
-        $entries = Package::all();
+        $packages = Package::all();
         return $app['twig']->render('frontend/home.html.twig', array(
-            'entries' => $entries
+            'packages' => $packages
         ));
     }
 
@@ -41,6 +41,14 @@ class FrontendController
         return $app['twig']->render('frontend/packageFeatures.html.twig', array(
             'features' => $features,
             'package' => $package
+        ));
+    }
+
+    public function navbarAction(Application $app)
+    {
+        $packages = Package::all();
+        return $app['twig']->render('frontend/partials/dropdownNav.html.twig', array(
+            'packages' => $packages
         ));
     }
 

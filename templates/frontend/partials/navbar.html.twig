@@ -26,14 +26,8 @@
                         <a href="#pablo" class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
                             packages
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-header">Our Packages</a>
-                            <a class="dropdown-item" href="/starter">Starter</a>
-                            <a class="dropdown-item" href="/editor">Editor</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
 
-                        </div>
+                        {{ render(controller('Solidsites\\Controllers\\FrontendController::navbarAction')) }}
 
                 </li>
             </ul>

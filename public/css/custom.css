@@ -84,6 +84,8 @@ body {
     background-image: linear-gradient(rgba(88, 88, 88, 1), rgba(0, 0, 0, 00.7)),
                         url('/img/christopher-gower-291246.jpg');
     background-size: cover;
-
+}
+.nav-tabs>.nav-item>.nav-link.active {
+    background-color: #242E38;
 }
 /* Media queries */
