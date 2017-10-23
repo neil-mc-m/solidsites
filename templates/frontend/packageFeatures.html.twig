@@ -7,12 +7,12 @@
             </div>
             <div class="container">
                 <div class="content-center">
-                    <h1 class="title">Package Features</h1>
+                    <h1 class="title">Website Features</h1>
 
                     <div class="text-center">
-                        <p class="text-white">
+                        <h2 class="text-white">
                             {{ package.name }}
-                        </p>
+                        </h2>
                     </div>
                 </div>
             </div>
@@ -76,8 +76,8 @@
         </div>
 
     </div>
-    {# modals #}
-    {#{% include 'frontend/partials/modals.html.twig' %}#}
-    {# the footer #}
-    {#{% include 'frontend/partials/footer.html.twig' %}#}
+     {#modals #}
+    {% include 'frontend/partials/modals.html.twig' %}
+     {#the footer #}
+    {% include 'frontend/partials/footer.html.twig' %}
 {% endblock %}
