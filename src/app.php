@@ -10,47 +10,50 @@ use Solidsites\Forms\PackageType;
 use Solidsites\Forms\ContactType;
 
 
-require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 $app = new Application();
 $app['debug'] = true;
+$app->register(new Solidsites\ConfigServiceProvider(), array(
+    'config.file' => __DIR__ . '/../config/config.ini',
+));
 $app->register(new Silex\Provider\VarDumperServiceProvider());
 $app->register(new TwigServiceProvider(), array(
-    'twig.path' => __DIR__.'/../templates',
+    'twig.path' => __DIR__ . '/../templates',
 ));
 $app->register(new CapsuleServiceProvider(),
     [
         'capsule.connections' =>
-        [
-            'default' => [
-                'driver' => 'mysql',
-                'host' => 'localhost',
-                'database' => 'solidsites',
-                'username' => 'root',
-                'password' => 'root'
-            ]
+            [
+                'default' => [
+                    'driver' => 'mysql',
+                    'host' => 'localhost',
+                    'database' => $app['config']['database']['database'],
+                    'username' => $app['config']['database']['username'],
+                    'password' => $app['config']['database']['password']
+                ],
 
-        ],
         'capsule.options' => [
-            'setAsGlobal'    => true,
-            'bootEloquent'   => true,
+            'setAsGlobal' => true,
+            'bootEloquent' => true,
+            ]
         ]
     ]
 );
 $app->register(new SessionServiceProvider());
 $app->register(new SecurityServiceProvider(), array(
-        'security.firewalls' => array(
-            'admin' => array(
-                'pattern' => '^/admin',
-                'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
-                'logout' => array('logout_path' => '/admin/logout', 'invalidate_session' => true),
-                'users' => function () use ($app) {
-                    return new UserProvider();
-                },
-            )
-        ),
-        'security.encoder.bcrypt.cost' => 4,
-    ));
+    'security.firewalls' => array(
+        'admin' => array(
+            'pattern' => '^/admin',
+            'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
+            'logout' => array('logout_path' => '/admin/logout', 'invalidate_session' => true),
+            'users' => function () use ($app) {
+                return new UserProvider();
+            },
+        )
+    ),
+    'security.encoder.bcrypt.cost' => $app['config']['bcrypt']['cost'],
+));
 $app->register(new Silex\Provider\LocaleServiceProvider());
 $app->register(new Silex\Provider\TranslationServiceProvider(), array(
     'locale_fallbacks' => array('en'),
@@ -59,6 +62,7 @@ $app->register(new Silex\Provider\ValidatorServiceProvider());
 $app->register(new Silex\Provider\HttpFragmentServiceProvider());
 $app->register(new FormServiceProvider());
 $app->register(new Cocur\Slugify\Bridge\Silex2\SlugifyServiceProvider());
+$app->register(new Silex\Provider\SwiftmailerServiceProvider());
 
 
 // register custom forms here.

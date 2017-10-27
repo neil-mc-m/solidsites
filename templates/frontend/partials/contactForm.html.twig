@@ -1,22 +1,9 @@
-<form action="" method="post">
-    {#<div class="input-group input-lg">#}
-                            {#<span class="input-group-addon">#}
-                                {#<i class="now-ui-icons users_circle-08"></i>#}
-                            {#</span>#}
-        {#<input type="text" class="form-control" placeholder="First Name...">#}
-    {#</div>#}
-    {#<div class="input-group input-lg">#}
-                            {#<span class="input-group-addon">#}
-                                {#<i class="now-ui-icons ui-1_email-85"></i>#}
-                            {#</span>#}
-        {#<input type="text" class="form-control" placeholder="Email...">#}
-    {#</div>#}
-    {#<div class="textarea-container">#}
-        {#<textarea class="form-control" name="name" rows="4" cols="80" placeholder="Type a message..."></textarea>#}
-    {#</div>#}
-    {#<div class="send-button">#}
-        {#<a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg">Send Message</a>#}
-    {#</div>#}
+<form id="contactForm" action="/contact" method="post">
+    {#{% for message in app.session.getFlashBag.get('message') %}#}
+        {#<div class="alert alert-primary" role="alert">#}
+            {#{{ message }}#}
+        {#</div>#}
+    {#{% endfor %}#}
     <div class="input-group input-lg">
         <span class="input-group-addon">
         <i class="now-ui-icons users_circle-08"></i>
