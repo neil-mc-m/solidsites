@@ -3,27 +3,27 @@ $(document).ready(function () {
             e.preventDefault();
             var url = $(this).attr('action');
             var formSerialize = $(this).serializeArray();
-            // $('#preLoader').show();
-            // $('#contactSubmit').hide();
+            $('#sendButton').hide();
             $.ajax({
                 type: $(this).attr('method'),
                 url: url,
                 data: formSerialize,
 
                 success: function (response) {
-                    // $('#preLoader').hide();
-                    // $('#contactSubmit').show();
+                    $('#sendButton').show();
 
-                    $('#myModal').modal('show');
+                    $('#alert').show();
+
+                    // $('#myModal').modal('show');
                     console.log(response);
-                    $('#message').html(response);
-                    // $('#contactForm')[0].reset();
+                    $('.message').html(response);
+                    $('#contactForm')[0].reset();
                 },
                 error: function (response) {
                     // $('#preLoader').hide();
                     // $('#contactSubmit').show();
                     console.log(response);
-                    $('#message').html(response);
+                    $('.message').html(response);
                 }
             })
         }
