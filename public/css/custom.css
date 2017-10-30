@@ -86,10 +86,16 @@ body {
     background-size: cover;
 }
 .nav-tabs>.nav-item>.nav-link.active {
-    background-color: #242E38;
+    border: 1px solid royalblue;
+}
+.nav-tabs>.nav-item>.nav-link {
+    color: royalblue;
 }
 
 .alert {
+    display: none;
+}
+.loader {
     display: none;
 }
 /* Media queries */

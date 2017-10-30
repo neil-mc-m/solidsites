@@ -12,6 +12,7 @@ namespace Solidsites\Controllers;
 use Silex\Application;
 use Solidsites\Forms\ContactType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 
 class ContactFormController
@@ -67,13 +68,15 @@ class ContactFormController
 //          result holds the number of successful recipients so we are looking for
 //          anything but zero
             $result = $mailer->send($message);
+//            $result === 0 ? $app['session']->getFlashbag()->add('message', 'Sorry, but that didnt send. Try again') : $app['session']->getFlashbag()->add('message', "Thanks! We'll be in touch very soon");
             if ($result === 0) {
-                $response = "Sorry, but that didnt send. Try again?";
+                $response = 'That didnt send try again?';
                 return $response;
             }else {
-                $response = "Thanks! We'll be in touch very soon";
+                $response = "Thanks for your interest. We'll be in touch over the next few days.";
                 return $response;
             }
+
         };
 
     }

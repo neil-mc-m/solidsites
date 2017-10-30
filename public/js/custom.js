@@ -4,16 +4,16 @@ $(document).ready(function () {
             var url = $(this).attr('action');
             var formSerialize = $(this).serializeArray();
             $('#sendButton').hide();
+            $('.loader').show();
             $.ajax({
                 type: $(this).attr('method'),
                 url: url,
                 data: formSerialize,
 
                 success: function (response) {
+                    $('.loader').hide();
                     $('#sendButton').show();
-
                     $('#alert').show();
-
                     // $('#myModal').modal('show');
                     console.log(response);
                     $('.message').html(response);
@@ -29,7 +29,7 @@ $(document).ready(function () {
         }
     );
 // Select all links with hashes
-    $('a[href*="#"]')
+    $('a[href*="#section"]')
     // Remove links that don't actually link to anything
         .not('[href="#"]')
         .not('[href="#0"]')
