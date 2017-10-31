@@ -10,8 +10,11 @@
 
                     <div class="text-center">
                         <h2 class="text-white">
-                            {{ package.name }}<br><small class="text-info">&euro;{{ package.price }} annually or &euro;{{ package.price/16|round }}
-                                monthly</small>
+                            {{ package.name }}<br>
+                            <span class="badge badge-info">from &euro;{{ package.price }}</span>
+                            {#<small class="text-info">&euro;{{ package.price }} annually or &euro;{{ package.price/16|round }}#}
+                                {#monthly#}
+                            {#</small>#}
                         </h2>
                     </div>
                 </div>
@@ -28,65 +31,101 @@
                             web
                             development tools at your disposal.
                         </p>
-
-                        <h3 class="title m-5">{{ package.name|capitalize }} Package <br>Details</h3>
-
-                        {#<div class="card tab-wrapper">#}
-                            <ul class="nav nav-tabs justify-content-center text-info" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#frontend" role="tab">Frontend</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#backend" role="tab">
-                                        Backend
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#hosted" role="tab">
-                                        Hosting
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#analytics" role="tab">
-                                        Analytics
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="separator separator-primary"></div>
-                            {#<div class="card-body">#}
-                                <!-- Tab panes -->
-                                <div class="tab-content text-center">
-                                    <div class="tab-pane active" id="frontend" role="tabpanel">
-                                        <p>{{ package.feature.frontend }}</p>
-                                    </div>
-                                    <div class="tab-pane" id="backend" role="tabpanel">
-                                        <p>{{ package.feature.backend }}</p>
-                                    </div>
-                                    <div class="tab-pane" id="hosted" role="tabpanel">
-                                        <p>{{ package.feature.host }}</p>
-                                        <p>{{ package.feature.cpu }}</p>
-                                        <p>{{ package.feature.ram }}</p>
-                                        <p>{{ package.feature.drive }}</p>
-                                        <p>{{ package.feature.transfer }}</p>
-                                        <p>{{ package.feature.server }}</p>
-                                    </div>
-                                    <div class="tab-pane" id="analytics" role="tabpanel">
-                                        <p>{{ package.feature.analytics }}</p>
-                                    </div>
-                                </div>
-                            {#</div>#}
-                        {#</div>#}
                     </div>
-
                 </div>
             </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3 class="title m-5">{{ package.name|capitalize }} Package <br>Details</h3>
+                        <p class="lead mt-4">{{ package.info }}</p>
+                        <div class="separator separator-primary"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row align-items-start text-white package-details mt-4 pt-5">
 
-            <div class="separator separator-primary"></div>
+                        <div class="col-sm text-center">
+                            <h6 class="text-black">Frontend</h6>
+                            <p>{{ package.feature.frontend }}</p>
+                        </div>
+                        <div class="col-sm text-center">
+                            <h6 class="text-black">Backend</h6>
+                            <p>{{ package.feature.backend }}</p>
+                        </div>
+                        <div class="col-sm text-center">
+                            <h6 class="text-black">Hosting</h6>
+                            <p>{{ package.feature.host }}</p>
+                            <p>{{ package.feature.cpu }}</p>
+                            <p>{{ package.feature.ram }}</p>
+                            <p>{{ package.feature.drive }}</p>
+                            <p>{{ package.feature.transfer }}</p>
+                            <p>{{ package.feature.server }}</p>
+                        </div>
+                        <div class="col-sm text-center">
+                            <h6 class="text-black">Analytics</h6>
+                            <p>{{ package.feature.analytics }}</p>
+                        </div>
+                    </div>
+
+            </div>
         </div>
-
     </div>
-     {#modals #}
+
+
+    {#<div class="card tab-wrapper">#}
+    {#<ul class="nav nav-tabs justify-content-center text-info" role="tablist">#}
+    {#<li class="nav-item">#}
+    {#<a class="nav-link active" data-toggle="tab" href="#frontend" role="tab">Frontend</a>#}
+    {#</li>#}
+    {#<li class="nav-item">#}
+    {#<a class="nav-link" data-toggle="tab" href="#backend" role="tab">#}
+    {#Backend#}
+    {#</a>#}
+    {#</li>#}
+    {#<li class="nav-item">#}
+    {#<a class="nav-link" data-toggle="tab" href="#hosted" role="tab">#}
+    {#Hosting#}
+    {#</a>#}
+    {#</li>#}
+    {#<li class="nav-item">#}
+    {#<a class="nav-link" data-toggle="tab" href="#analytics" role="tab">#}
+    {#Analytics#}
+    {#</a>#}
+    {#</li>#}
+    {#</ul>#}
+    {#<div class="separator separator-primary"></div>#}
+    {#<div class="card-body">#}
+    {#<!-- Tab panes -->#}
+    {#<div class="tab-content text-center">#}
+    {#<div class="tab-pane active" id="frontend" role="tabpanel">#}
+    {#<p>{{ package.feature.frontend }}</p>#}
+    {#</div>#}
+    {#<div class="tab-pane" id="backend" role="tabpanel">#}
+    {#<p>{{ package.feature.backend }}</p>#}
+    {#</div>#}
+    {#<div class="tab-pane" id="hosted" role="tabpanel">#}
+    {#<p>{{ package.feature.host }}</p>#}
+    {#<p>{{ package.feature.cpu }}</p>#}
+    {#<p>{{ package.feature.ram }}</p>#}
+    {#<p>{{ package.feature.drive }}</p>#}
+    {#<p>{{ package.feature.transfer }}</p>#}
+    {#<p>{{ package.feature.server }}</p>#}
+    {#</div>#}
+    {#<div class="tab-pane" id="analytics" role="tabpanel">#}
+    {#<p>{{ package.feature.analytics }}</p>#}
+    {#</div>#}
+    {#</div>#}
+    {#</div>#}
+    {#</div>#}
+
+
+
+    <div class="separator separator-primary"></div>
+
+    {#modals #}
     {% include 'frontend/partials/modals.html.twig' %}
-     {#the footer #}
+    {#the footer #}
     {% include 'frontend/partials/footer.html.twig' %}
 {% endblock %}
