@@ -1,4 +1,8 @@
 {% extends 'frontend/base.html.twig' %}
+{% block description %}
+    Web design and development services based in Meath. Web packages available with responsive design as standard. Check out our {{ package.name }} package.
+{% endblock %}
+{% block title %}SolidSites ~ Web design and development ~ Meath ~ {{ package.name }} Package{% endblock %}
 {% block content %}
     {% include 'frontend/partials/navbar.html.twig' %}
     <div class="wrapper">
@@ -11,10 +15,8 @@
                     <div class="text-center">
                         <h2 class="text-white">
                             {{ package.name }}<br>
-                            <span class="badge badge-info">from &euro;{{ package.price }}</span>
-                            {#<small class="text-info">&euro;{{ package.price }} annually or &euro;{{ package.price/16|round }}#}
-                                {#monthly#}
-                            {#</small>#}
+                            <span class="badge badge-info p-2">from &euro;{{ package.price }}</span>
+
                         </h2>
                     </div>
                 </div>
