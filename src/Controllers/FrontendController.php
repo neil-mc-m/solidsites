@@ -22,6 +22,10 @@ class FrontendController
         ));
     }
 
+    public function servicesAction(Application $app)
+    {
+        return $app['twig']->render('frontend/services.html.twig', array());
+    }
     public function contactFormAction(Application $app)
     {
         $data = array();

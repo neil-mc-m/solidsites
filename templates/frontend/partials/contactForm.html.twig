@@ -1,9 +1,5 @@
 <form id="contactForm" action="/contact" method="post">
-    {#{% for message in app.session.getFlashBag.get('message') %}#}
-        {#<div class="alert alert-primary" role="alert">#}
-            {#{{ message }}#}
-        {#</div>#}
-    {#{% endfor %}#}
+
     <div id="alert" class="alert alert-success" role="alert">
         <div class="container">
             <div class="alert-icon">
@@ -22,10 +18,7 @@
         <i class="now-ui-icons users_circle-08"></i>
         </span>
         {{ form_errors(form.name) }}
-        {#{{ form_label(form.name) }}#}
         {{ form_widget(form.name) }}
-
-
     </div>
 
 
@@ -34,30 +27,16 @@
         <i class="now-ui-icons ui-1_email-85"></i>
         </span>
         {{ form_errors(form.email) }}
-        {#{{ form_label(form.email) }}#}
         {{ form_widget(form.email) }}
-
-
     </div>
     <h6 class="p-md-3 p-sm-4">Im interested in the ...</h6>
     <div class="radio input-group text-justify">
-
-        {#<span class="input-group-addon">#}
-        {#<i class="now-ui-icons ui-1_email-85"></i>#}
-        {#</span>#}
         {{ form_errors(form.package) }}
-        {#{{ form_label(form.email) }}#}
         {{ form_widget(form.package) }}
-
-
     </div>
     <div class="textarea-container">
-
         {{ form_errors(form.message) }}
-        {#{{ form_label(form.message) }}#}
         {{ form_widget(form.message) }}
-
-
     </div>
     <div class="send-button">
         <input type="submit" class="btn btn-primary btn-round btn-block btn-lg loader" value="sending...">

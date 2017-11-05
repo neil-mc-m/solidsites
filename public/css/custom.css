@@ -78,7 +78,7 @@ body {
     color: royalblue;
 }
 
-.alert {
+#alert {
     display: none;
 }
 .loader {
@@ -86,5 +86,8 @@ body {
 }
 .package-details {
     background-color: #919594;
+}
+.package-features {
+    padding-bottom: 0;
 }
 /* Media queries */

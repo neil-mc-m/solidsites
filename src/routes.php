@@ -1,5 +1,6 @@
 <?php
 $app->get('/', 'Solidsites\\Controllers\\FrontendController::homeAction');
+$app->get('/services', 'Solidsites\\Controllers\\FrontendController::servicesAction');
 $app->get('/login', 'Solidsites\\Controllers\\LoginController::loginAction');
 $app->post('/contact', 'Solidsites\\Controllers\\ContactFormController::sendContactFormAction');
 $app->get('/{slug}', 'Solidsites\\Controllers\\FrontendController::viewPackageAction');

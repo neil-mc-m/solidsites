@@ -37,11 +37,11 @@ class ContactType extends AbstractType
                 'choices' => array(
                     'starter package' => 'starter',
                     'editor package' => 'editor',
-                    'content specialist package' => 'content'
+                    'professional package' => 'content',
+                    'custom package' => 'custom'
                 ),
                 'attr' => array(
                     'class' => 'radio',
-//                    'placeholder' => 'Im interested in the ')
                 )
             ))
             ->add('message', TextareaType::class, array(

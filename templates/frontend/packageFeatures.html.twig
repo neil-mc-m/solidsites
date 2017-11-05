@@ -23,37 +23,42 @@
             </div>
         </div>
 
-        <div class="section">
+        <div class="section package-features">
 
             <div class="container-fluid">
+
                 <div class="row">
                     <div class="col-md-8 ml-auto mr-auto text-center">
                         <h3 class="title m-5">{{ package.name|capitalize }} Package <br>Details</h3>
                         <p class="lead mt-4">{{ package.info|capitalize }}</p>
                         <div class="separator separator-primary"></div>
+
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">
-                <div class="row align-items-start text-white package-details mt-4 p-5">
 
-                        <div class="col-sm col-md-4 text-center">
-                            <h6 class="text-black">Frontend</h6>
-                            <p>{{ package.feature.frontend }}</p>
-                        </div>
-                        <div class="col-sm col-md-4 text-center">
-                            <h6 class="text-black">Backend</h6>
-                            <p>{{ package.feature.backend }}</p>
-                        </div>
-                        <div class="col-sm col-md-4 text-center">
-                            <h6 class="text-black">Hosting</h6>
-                            <p>{{ package.feature.host }}</p>
 
-                        </div>
-                        <div class="col-sm col-md-4 text-center">
-                            <h6 class="text-black">Analytics</h6>
-                            <p>{{ package.feature.analytics }}</p>
-                        </div>
+            <div class="container-fluid package-details">
+
+                <div class="row align-items-start text-white mt-4 p-5">
+
+                    <div class="col-sm col-md-4 text-center">
+                        <h6 class="text-black">Frontend</h6>
+                        <p>{{ package.feature.frontend }}</p>
+                    </div>
+                    <div class="col-sm col-md-4 text-center">
+                        <h6 class="text-black">Backend</h6>
+                        <p>{{ package.feature.backend }}</p>
+                    </div>
+                    <div class="col-sm col-md-4 text-center">
+                        <h6 class="text-black">Hosting</h6>
+                        <p>{{ package.feature.host }}</p>
+
+                    </div>
+                    <div class="col-sm col-md-4 text-center">
+                        <h6 class="text-black">Analytics</h6>
+                        <p>{{ package.feature.analytics }}</p>
+                    </div>
                     <div class="col-sm col-md-4 text-center">
                         <h6 class="text-black">SEO</h6>
 
@@ -84,35 +89,57 @@
                         <p>{{ package.feature.payment_integration }}</p>
 
                     </div>
-                    </div>
+
+                </div>
+                <div class="text-center pb-4">
+                    <a class="btn btn-primary btn-lg" href="/#contact">Sign me up!</a>
+                </div>
 
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto text-center">
-                    <h2 class="title">Development Technologies</h2>
-                    <p class="lead mt-4">No matter what web package you choose, we have you covered with our modern and flexible tech stack.<br>
-                        We use Bootstrap on the frontend and Laravel on the server side ensuring you get the latest open source web development tools at your
-                        disposal.
-                    </p>
+
+        <div class="alert alert-info" role="alert">
+            <div class="container-fluid">
+                <div class="alert-icon">
+                    <i class="now-ui-icons travel_info"></i>
                 </div>
+                <strong>Please Note</strong> All the packages are fairly flexible and can change depending on the projects scope. This mean costs
+                can also change depending on requirements.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">
+				<i class="now-ui-icons ui-1_simple-remove"></i>
+			</span>
+                </button>
             </div>
         </div>
-        <div class="container-fluid mt-4">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto text-center">
-                    <h3 class="title">Version Control and Backups</h3>
-                    <p class="mt-4">
-                        Of course, sometimes things go wrong....thats why we version control all our code. This means
-                        if something goes wrong with your
-                        site, we
-                        can rebuild it again very
-                        quickly without
-                        stress
-                        or loss to your business. Of course, we also include backups of your site with our hosting package so none of your data or
-                        content gets erased in case of a system failure.
-                    </p>
+        <div class="section">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h2 class="title">Development Technologies</h2>
+                        <p class="lead mt-4">No matter what web package you choose, we have you covered with our modern and flexible tech stack.<br>
+                            We use Bootstrap on the frontend and Laravel on the server side ensuring you get the latest open source web development tools at
+                            your
+                            disposal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt-4">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3 class="title">Version Control and Backups</h3>
+                        <p class="mt-4">
+                            Of course, sometimes things go wrong....thats why we version control all our code. This means
+                            if something goes wrong with your
+                            site, we
+                            can rebuild it again very
+                            quickly without
+                            stress
+                            or loss to your business. Of course, we also include backups of your site with our hosting package so none of your data or
+                            content gets erased in case of a system failure.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
