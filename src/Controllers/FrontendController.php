@@ -11,6 +11,7 @@ namespace Solidsites\Controllers;
 use Silex\Application;
 use Solidsites\Forms\ContactType;
 use Solidsites\Models\Package;
+use Solidsites\Models\Post;
 
 class FrontendController
 {
@@ -25,6 +26,14 @@ class FrontendController
     public function servicesAction(Application $app)
     {
         return $app['twig']->render('frontend/services.html.twig', array());
+    }
+
+    public function viewAllBlogPostsAction(Application $app)
+    {
+        $posts = Post::all();
+        return $app['twig']->render('frontend/blog.html.twig', array(
+            'posts' => $posts
+        ));
     }
     public function contactFormAction(Application $app)
     {

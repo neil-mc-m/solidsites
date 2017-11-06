@@ -1,0 +1,36 @@
+{% extends 'frontend/base.html.twig' %}
+{% block description %}The SolidSites blog about all things web related.{% endblock %}
+{% block title %}SolidSites ~ Web design and development ~ Meath ~ The Blog{% endblock %}
+{% block content %}
+    <div class="wrapper">
+        <div class="page-header page-header-small">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('/img/maxime-le-conte-des-floris-151374.jpg');"></div>
+            <div class="container">
+                <div class="content-center">
+                    <h1 class="title">Blog</h1>
+
+                    <div class="text-center">
+                        <h2 class="text-white">
+                            have a read of the blog
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% for post in posts %}
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="title">{{ post.title }}</h2>
+                        <h6 class="text-muted">{{ post.sub_title }}</h6>
+                        <p>{{ post.body }}</p>
+                        <p class="text-secondary">{{ post.author }}</p>
+                        <p>{{ post.created_at.toFormattedDateString }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            {% endfor %}
+    </div>
+{% endblock %}
