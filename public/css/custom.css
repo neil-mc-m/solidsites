@@ -4,7 +4,7 @@ body {
 }
 
 .section {
-    padding-top: 100px;
+    padding-top: 70px;
 }
 .card-boite {
 
@@ -71,12 +71,12 @@ body {
                         url('/img/christopher-gower-291246.jpg');
     background-size: cover;
 }
-.nav-tabs>.nav-item>.nav-link.active {
-    border: 1px solid royalblue;
-}
-.nav-tabs>.nav-item>.nav-link {
-    color: royalblue;
-}
+/*.nav-tabs>.nav-item>.nav-link.active {*/
+    /*border: 1px solid royalblue;*/
+/*}*/
+/*.nav-tabs>.nav-item>.nav-link {*/
+    /*color: royalblue;*/
+/*}*/
 
 #alert {
     display: none;
