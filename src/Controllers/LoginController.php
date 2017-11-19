@@ -3,6 +3,7 @@
 namespace Solidsites\Controllers;
 
 use Silex\Application;
+use Solidsites\Models\Post;
 use Symfony\Component\HttpFoundation\Request;
 
 class LoginController
@@ -19,10 +20,11 @@ class LoginController
     {
         $user = $app['security.token_storage']->getToken()->getUser()->getUsername();
         $app['session']->set('user', array('username' => $user));
-
+        $posts = Post::where('author', '=', 'niall')->get();
         $templateName = 'backend/dashboard';
         $args_array = array(
             'user' => $app['session']->get('user'),
+            'posts' => $posts
 
         );
         return $app['twig']->render($templateName.'.html.twig', $args_array);

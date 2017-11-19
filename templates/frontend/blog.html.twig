@@ -11,7 +11,7 @@
 
                     <div class="text-center">
                         <h2 class="text-white">
-                            have a read of the blog
+                            The SolidSites blog
                         </h2>
                     </div>
                 </div>
@@ -22,9 +22,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="title">{{ post.title }}</h2>
+                        <h2 class="title">{{ post.title|capitalize }}</h2>
                         <h6 class="text-muted">{{ post.sub_title }}</h6>
-                        <p>{{ post.body }}</p>
+                        <p>{{ post.body|capitalize }}</p>
                         <p class="text-secondary">{{ post.author }}</p>
                         <p>{{ post.created_at.toFormattedDateString }}</p>
                     </div>
@@ -33,4 +33,6 @@
         </div>
             {% endfor %}
     </div>
+    {# the footer #}
+    {% include 'frontend/partials/footer.html.twig' %}
 {% endblock %}

@@ -37,7 +37,6 @@ class ContactFormController
         $form = $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-//            $messageBody = $data['package'].'<br>'.$data['message'];
 //            create the transport
             $transport = (new \Swift_SmtpTransport($app['config']['email']['host'], 587, 'tls'))
                 ->setUsername($app['config']['email']['username'])
@@ -68,7 +67,6 @@ class ContactFormController
 //          result holds the number of successful recipients so we are looking for
 //          anything but zero
             $result = $mailer->send($message);
-//            $result === 0 ? $app['session']->getFlashbag()->add('message', 'Sorry, but that didnt send. Try again') : $app['session']->getFlashbag()->add('message', "Thanks! We'll be in touch very soon");
             if ($result === 0) {
                 $response = 'That didnt send try again?';
                 return $response;

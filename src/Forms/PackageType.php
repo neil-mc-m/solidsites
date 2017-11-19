@@ -27,12 +27,6 @@ class PackageType extends AbstractType
                     'id' => 'summernote'
                 )
             ))
-//            ->add('created_at', TextType::class, array(
-//                'attr' => array('class' => 'form-control')
-//            ))
-//            ->add('updated_at', TextType::class, array(
-//                'attr' => array('class' => 'form-control')
-//            ))
             ->add('slug', TextType::class, array(
                 'attr' => array('class' => 'form-control')
             ));

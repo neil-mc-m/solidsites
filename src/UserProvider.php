@@ -2,22 +2,16 @@
 
 namespace Solidsites;
 
-use Silex\Application;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\User;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
-//use Illuminate\Database\Capsule\Manager as Capsule;
 use Solidsites\Models\Member;
+
+
 class UserProvider implements UserProviderInterface
 {
-//    private $app;
-//
-//    public function __construct(Application $app)
-//    {
-//        $this->app = $app;
-//    }
 
 
     public function loadUserByUsername($username)

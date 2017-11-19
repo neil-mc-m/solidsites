@@ -50,10 +50,8 @@ class FrontendController
     public function viewPackageAction(Application $app, $slug)
     {
         $package = Package::where('slug', $slug)->firstOrFail();
-//        $features = $package->feature();
-//        var_dump($features);
+
         return $app['twig']->render('frontend/packageFeatures.html.twig', array(
-//            'features' => $features,
             'package' => $package
         ));
     }
