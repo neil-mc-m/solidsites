@@ -17,7 +17,7 @@ $app['debug'] = true;
 $app->register(new Solidsites\ConfigServiceProvider(), array(
     'config.file' => __DIR__ . '/../config/config.ini',
 ));
-$app->register(new Silex\Provider\VarDumperServiceProvider());
+
 $app->register(new TwigServiceProvider(), array(
     'twig.path' => __DIR__ . '/../templates',
 ));
